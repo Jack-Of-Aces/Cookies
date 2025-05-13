@@ -1,0 +1,155 @@
+<!--Created By Munachi
+Twitter: @Moon_and_Cheese-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fortune Cookie Project</title>
+  <style>
+   * {
+     margin: 0;
+     padding: 0;
+   }
+   
+  	body {
+  		font-size: 17pt;
+  		text-align: center;
+  		background: black;
+  	}
+  	
+  	h1 {
+  		font-size: 2rem;
+  		font-weight: 900;
+  		color: #FF0505;
+  		font-family: Georgia, 'Times ""New Roman', Times, serif;
+  	}
+  	
+  	.bigContainer{
+    background: black;
+  	}
+  	
+  	#fortune {
+  	  color: green;
+  	  background: black;
+  	  border-radius: 20px;
+  	  transform: translateY(35vh);
+  	}
+  	
+  	.container {
+  	  display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+  	}
+  	
+  	  .btn {
+  	        font-family: Georgia, 'Times New Roman', Times, serif;
+            position: relative;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #2A056C, #E18EF6);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 8px 8px #00000075;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            overflow: hidden;
+            font-style: italic;
+            transition: all 0.3s ease;
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        .btn:active {
+            transform: translateY(8px);
+            box-shadow: none;
+        }
+  </style>
+</head>
+
+<body>
+  <h1>BEWARE! - <em>Your Fortune Lies Ahead!</em></h1>
+  
+  <div class="bigContainer">
+    <h3 id="fortune"></h3>
+  <div class="container">
+    <button class="btn">REVEAL MY FORTUNE!</button>
+  </div>
+  </div>
+  <script>
+  
+  alert('Refresh to get another fortune.')
+  
+  	const yourFortunes = [
+    // Good Fortunes
+    "Your crush will text you first... but it'll say 'wrong number.' Still, a win is a win.",
+    "A glow-up is coming. No, not the TikTok filter kind – the real kind.",
+    "You will ace that test you didn’t study for. (Or at least convince everyone you did.)",
+    "Your ex’s new partner is uglier than you imagined. Enjoy that.",
+    "Your future holds fewer awkward phases… but not zero. Nobody’s that lucky.",
+
+    // Bad Fortunes
+    "That ‘we need to talk’ text? Yeah, it’s coming. Brace yourself.",
+    "Your WiFi will fail at the worst possible moment. Pray for unlimited data.",
+    "Someone you trust will betray you. (No, not your dog. Just people.)",
+    "Your phone battery will die right when you need to record the drama.",
+    "You’ll realize your ‘signature look’ was just a phase. A regrettable one.",
+
+    // Ugly Fortunes
+    "One day, you’ll cringe at your old self. Today is that day.",
+    "Your future holds a major embarrassment. No spoilers, but it’s already recorded.",
+    "That thing you posted at 2 AM? Yeah, it’s still out there. Haunting you.",
+    "You’ll laugh at this now, but it’ll hit different at 3 AM.",
+    "Your sleep schedule will never recover. Neither will your GPA.",
+
+    // Emotional Fortunes
+    "You’ll miss these chaotic days. (Yes, even the cringe ones.)",
+    "Someone out there still thinks about that weird thing you said. They’re not mad, just confused.",
+    "Your pet loves you more than anyone ever will. Sorry, facts are facts.",
+    "You’ll outgrow friends you can’t imagine living without. It’ll hurt, but you’ll be okay.",
+    "One day, your parents will seem human. It’ll freak you out.",
+
+    // Random Fortunes
+    "Your next crush will have a red flag you choose to ignore. Enjoy the ride.",
+    "A group chat you’re in will implode spectacularly. Bring popcorn.",
+    "You’ll be put on the spot to tell a fun fact. You still won’t have one.",
+    "Your Spotify Wrapped will reveal truths about yourself you’re not ready to face.",
+    "A minor inconvenience will ruin your entire week. You’ll call it ‘trauma.’",
+
+    // Messed Up Fortunes
+    "You’re aging at a rate of one second per second. Good luck with that.",
+    "The ‘perfect’ life you compare yourself to? It’s fake. Go eat a snack.",
+    "You’ll have a deep thought in the shower… and forget it immediately.",
+    "Your future self is judging you right now. (They’re also cringing.)",
+    "None of this will matter in 100 years. But for now, overthink it anyway."
+];
+
+function getRandomFortune() {
+    const randomIndex = Math.floor(Math.random() * yourFortunes.length);
+    const fortune = document.getElementById('fortune');
+   fortune.textContent = yourFortunes[randomIndex];
+   const contain = document.querySelector('.bigContainer')
+   contain.style.background = "url('./thaWizard.jpg')";
+   contain.style.backgroundSize = "cover";
+    contain.style.backgroundPosition = "center";
+    contain.style.backgroundRepeat = "no-repeat";
+    contain.style.backgroundAttachment = "fixed";
+    contain.style.margin = 0;
+    contain.style.height = "100vh";
+    
+    button.style.display = "none"
+}
+
+const button = document.querySelector('.btn')
+button.addEventListener('click', getRandomFortune)
+
+  </script>
+</body>
+</html>
